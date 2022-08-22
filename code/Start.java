@@ -2,8 +2,8 @@
 class Start {
 
     public static void main(String[] args) {
-        //int[] a = { 9, 8, 5, 4, 3, 1, 7, 2, 6 };
-        int[] a = { 5 };
+        int[] a = { 9, 8, 5, 4, 3, 1, 7, 2, 6 };
+        
         Tool.sort(a);
         for(int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
@@ -24,8 +24,13 @@ class Tool {
     }
     
     static int partition(int[] data, int left, int right) {
-        // Choose the last element to be the pivot
-        int pivot = right;
+        int total = right - left + 1;
+        int r = (int)Math.random() * total;
+        int pivot = left + r;
+        int t  = data[pivot];       // data[pivot] <=> data[right]
+        data[right] = t;
+        pivot = right;
+        
         int turtle = left;
         for (int rabbit = left; rabbit < right; rabbit++) {
             
