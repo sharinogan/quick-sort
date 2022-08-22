@@ -1,13 +1,12 @@
-
 class Start {
 
     public static void main(String[] args) {
-        int[] a = { 9, 8, 5, 4, 3, 1, 7, 2, 6 };
-        
-        Tool.sort(a);
-        for(int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
+        int p = find(78, 195378678);
+        System.out.println(p);
+    }
+    
+    static int find(int a, int b) {
+        return (""+b).indexOf(""+a);
     }
 }
 
